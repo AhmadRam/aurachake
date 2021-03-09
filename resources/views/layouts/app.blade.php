@@ -59,7 +59,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         @if (!Auth::check())
                         <li class=""><a href="{{ route('register',app()->getLocale()) }}">{{ __('Register')}}</a></li>
-                        <li class=""><a href="{{ route('login') }},app()->getLocale()">{{ __('Login')}}</a></li>
+                        <li class=""><a href="{{ route('login'),app()->getLocale() }}">{{ __('Login')}}</a></li>
                         @endif
                         <li><a href="javascript:void(0);" title="Search" id="arama"><i class="fa ft-18 fa-search"></i></a></li>
                         <li>
