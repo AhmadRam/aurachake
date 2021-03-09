@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Str;
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-$host = $url["127.0.0.1"] ?? null;
-$username = $url["root"] ?? null;
-$password = $url[""] ?? null;
-$database = substr($url["shop"], 1);
+
+
+$DATABASE_URL=parse_url('postgres://kukxjltlmjagab:681ff7f4b5f0b36f7520b315dd4a0bbaeb6e325e2fb7a36709d887951cd7e646@ec2-54-145-102-149.compute-1.amazonaws.com:5432/ddqalgbvg23mma
+');
+
+
 return [
 
     /*
@@ -19,7 +20,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'pgsql'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,12 +65,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => $DATABASE_URL["host"],
+            'port' => $DATABASE_URL["port"],
+            'database' => ltrim($DATABASE_URL["path"], "/"),
+            'username' => $DATABASE_URL["root"],
+            'password' => $DATABASE_URL[""],
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
