@@ -59,7 +59,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         @if (!Auth::check())
                         <li class=""><a href="{{ route('register',app()->getLocale()) }}">{{ __('Register')}}</a></li>
-                        <li class=""><a href="{{ app()->getLocale()),route('login' }}">{{ __('Login')}}</a></li>
+                        <li class=""><a href="{{ route('login',app()->getLocale()) }}">{{ __('Login')}}</a></li>
                         @endif
                         <li><a href="javascript:void(0);" title="Search" id="arama"><i class="fa ft-18 fa-search"></i></a></li>
                         <li>
@@ -157,10 +157,10 @@
             <div class="col-md-3 text-left">
                 <h3 class="footerTitle">{{ __('INFORMATION')}}</h3>
                 <ul class="list-unstyled">
-                    <li><a class="footerListe" href="{{ url(app()->getLocale(),'information\sales-agreement') }}">{{ __('Sales Agreement')}}</a></li>
-                    <li><a class="footerListe" href="{{ url(app()->getLocale(),'information\return-policy') }}">{{ __('Return Policy')}}</a></li>
-                    <li><a class="footerListe" href="{{ url(app()->getLocale(),'information/privacy-policy') }}">{{ __('Privacy Policy')}}</a></li>
-                    <li><a class="footerListe" href="{{ url(app()->getLocale(),'information/user-agreement') }}">{{ __('User Agreement')}}</a></li>
+                    <li><a class="footerListe" href="{{url(app()->getLocale())}}information/sales-agreement">{{ __('Sales Agreement')}}</a></li>
+                    <li><a class="footerListe" href="{{url(app()->getLocale())}}information/return-policy">{{ __('Return Policy')}}</a></li>
+                    <li><a class="footerListe" href="{{url(app()->getLocale())}}information/privacy-policy">{{ __('Privacy Policy')}}</a></li>
+                    <li><a class="footerListe" href="{{url(app()->getLocale())}}information/user-agreement">{{ __('User Agreement')}}</a></li>
                 </ul>
             </div>
             <div class="col-md-3 text-left">
