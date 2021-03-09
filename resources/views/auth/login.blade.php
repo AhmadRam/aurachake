@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div class="col-md-12">
         <ul class="breadcrumb">
-            <li><a href="{{ url(app()->getLocale(),'') }}">{{ __('Homepage')}}</a></li>
+            <li><a href="">{{ __('Homepage')}}</a></li>
             <li class="active">{{ __('Member Login')}}</li>
         </ul>
     </div>
