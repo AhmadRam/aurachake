@@ -62,7 +62,7 @@ Route::group(['prefix' => '{language}'], function () {
     })->name('home');
 
     Route::get('/AboutUs', function () {
-        return view('about-Us');
+        return view('aboutUs');
     })->name('aboutUs');
     Route::get('/campaigns', function () {
         return view('campaigns');
